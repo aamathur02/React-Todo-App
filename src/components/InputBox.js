@@ -3,7 +3,7 @@ import React from "react";
 class InputBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { input: " Enter your task here" };
+    this.state = { input: "" };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -15,8 +15,12 @@ class InputBox extends React.Component {
   }
 
   handleSubmit(event) {
-    this.props.handleNewTask(this.state.input);
-    event.preventDefault();
+    if (this.state.input === "" ) {
+      alert("Please enter a valid task")
+    } else {
+      event.preventDefault();
+      this.props.handleNewTask(this.state.input);
+    }
   }
 
   render() {
@@ -24,6 +28,8 @@ class InputBox extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           <input
+            id="input"
+            placeholder="Enter your task here"
             type="text"
             value={this.state.value}
             onChange={this.handleChange}

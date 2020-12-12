@@ -1,0 +1,23 @@
+.list {
+    list-style: none;
+    padding-left: 0;
+  } 
+  .todoListMain .list li {
+    align-items: center;
+    color: #333;
+    background-color: rgba(16, 123, 189, 0.774);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    list-style: none;
+  }
+
+  ul.theList {
+    padding: 0;
+  }
+
+  .todoListMain{
+      margin: auto;
+      width: 200px;
+  
+  }

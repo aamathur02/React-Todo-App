@@ -1,5 +1,7 @@
 import React from "react";
 import InputBox from "./InputBox.js";
+import "../stylesheets/Container.css"
+import Title from "./Title.js";
 class Container extends React.Component {
   constructor(props) {
     super(props);
@@ -30,12 +32,12 @@ class Container extends React.Component {
   
  
   render() {
-    const listItems = this.state.taskList.map((task) => <li onClick={() => this.handleItemDelete(task.key)}>{task.text}</li>);
+    const listItems = this.state.taskList.map((task) => <li class="list-items" onClick={() => this.handleItemDelete(task.key)}>{task.text}</li>);
     return (
-      <div>
+      <div><Title/>
         <InputBox handleNewTask={this.handleNewTask} />
-        <button onClick={() => this.handleNewTask("item")}> Click Here </button>
-        <ul>{listItems}</ul>
+        <div class="todoListMain"><ul class="list" >{listItems}</ul></div>
+        
       </div>
     );
   }
